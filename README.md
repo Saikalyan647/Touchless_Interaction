@@ -1,91 +1,195 @@
-🚀 Overview
+# 🚀 Touchless Interaction with Kiosk
 
-Touchless Interaction with Kiosk is a computer vision-based system that enables users to interact with a kiosk interface using hand gestures instead of physical touch.
+## 📖 Overview
 
-The project was developed to improve hygiene, accessibility, and user experience in public environments such as ATMs, ticketing machines, and self-service kiosks.
+**Touchless Interaction with Kiosk** is a computer vision and deep learning-based application that enables users to interact with a kiosk interface using **hand gestures** instead of physically touching the screen.
 
-🎯 Problem Statement
+The system was developed to improve **hygiene, accessibility, and user experience** in public environments such as ATMs, ticket booking machines, airport check-in kiosks, hospitals, and other self-service systems.
 
-Traditional kiosks require physical contact, which can:
+Using **OpenCV**, **MediaPipe**, **TensorFlow**, and **Flask**, the application performs real-time hand detection and gesture recognition to provide a smooth, touch-free interaction experience.
 
-Spread germs in public environments
-Create accessibility challenges
-Reduce user convenience
-This project provides a contactless interaction system using real-time hand gesture recognition.
+---
 
-🛠️ Technologies Used
+## 🎯 Problem Statement
 
-Flask – Web framework
-OpenCV – Real-time computer vision
-TensorFlow – Deep learning framework for gesture model
-MediaPipe – Hand tracking and gesture recognition
-HTML/CSS – Frontend interface
-Pretrained model: gesture_model.h5
-✨ Features
+Traditional touchscreen kiosks require users to physically touch the display, which can:
 
-Real-time hand tracking
-Gesture-based menu navigation
-Touch-free interaction
-Lightweight and efficient processing
-Achieved >90% gesture detection accuracy during testing
-🧠 How It Works (Technical Explanation)
+- Increase the spread of germs in public environments.
+- Create accessibility challenges for some users.
+- Reduce convenience in high-traffic areas.
+- Require frequent cleaning and maintenance.
 
-The system uses real-time frame processing through OpenCV.
+This project solves these challenges by replacing physical touch with **real-time hand gesture recognition**, allowing users to operate the kiosk without making physical contact.
 
-Frames are captured from the webcam
-Image preprocessing (grayscale conversion, thresholding, contour detection) is applied
-Hand region is extracted
-Gesture patterns are classified based on shape and movement
-Detected gestures trigger corresponding UI events
-The system is optimized to reduce latency and ensure smooth user experience.
+---
 
-🖥️ Installation & Setup
+## 🛠️ Tech Stack
 
-# Clone the repository
-git clone https://github.com/your-username/touchless-kiosk.git
+- **Python**
+- **Flask**
+- **OpenCV**
+- **TensorFlow / Keras**
+- **MediaPipe**
+- **NumPy**
+- **HTML5**
+- **CSS3**
+- **JavaScript**
 
-# Create a virtual environment:
-python -m venv venv
-venv\Scripts\activate      # For Windows
-# OR
-source venv/bin/activate   # For macOS/Linux
+---
 
-# Install dependencies:
-pip install -r requirements.txt
+## ✨ Features
 
-# Run the project
-python main.py
-📂 Folder Structure
+- 🎥 Real-time hand tracking using MediaPipe
+- ✋ Gesture-based menu navigation
+- 🖥️ Touch-free kiosk interaction
+- ⚡ Lightweight and low-latency processing
+- 🎯 More than **90% gesture recognition accuracy**
+- 📷 Webcam-based interaction (no additional hardware required)
 
-Touchless_Interaction_With_Kisok/
+---
+
+## 🧠 How It Works
+
+1. The webcam captures live video frames.
+2. OpenCV processes each frame in real time.
+3. MediaPipe detects the user's hand and extracts hand landmarks.
+4. The hand region is preprocessed before being passed to the trained TensorFlow model.
+5. The gesture recognition model classifies the detected gesture.
+6. Flask sends the recognized gesture to the frontend.
+7. The kiosk interface performs the corresponding action, such as navigation or selection.
+
+---
+
+## 📂 Project Structure
+
+```text
+Touchless_Interaction_With_Kiosk/
 │
-├── app.py                      # Main backend script
-├── gesture_model.h5            # Trained gesture model
-├── index111.html               # HTML UI
+├── app.py                  # Main Flask application
+├── gesture_model.h5        # Trained TensorFlow model
+├── requirements.txt
 │
-├── static/                     # Assets (images, styles)
-│   ├── *.png                   # Icon images
-│   ├── *.jpg                   # Background/check-in images
-│   ├── styles.css              # Styling
+├── templates/
+│   └── index111.html
+│
+├── static/
+│   ├── styles.css
 │   ├── styles1.css
-│   └── styles2.css
+│   ├── styles2.css
+│   ├── *.png
+│   └── *.jpg
+│
+└── README.md
+```
 
-##📦 requirements.txt
+---
 
+## 🖥️ Installation & Setup
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/your-username/touchless-kiosk.git
+```
+
+### Navigate to the Project Folder
+
+```bash
+cd touchless-kiosk
+```
+
+### Create a Virtual Environment
+
+**Windows**
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+**macOS/Linux**
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Run the Application
+
+```bash
+python app.py
+```
+
+---
+
+## 📦 Requirements
+
+```text
 Flask
 opencv-python
 tensorflow
 mediapipe
 numpy
+```
 
-⚠️ Challenges Faced
+---
 
-Handling varying lighting conditions
-Background noise interference
-Reducing detection delay
-Improving gesture accuracy
-📈 Results
+## ⚠️ Challenges Faced
 
-Achieved more than 90% gesture detection accuracy
-Successfully integrated gesture recognition with kiosk interface
-Improved accessibility and hygiene in public interaction systems
+During development, the following challenges were encountered:
+
+- Handling different lighting conditions.
+- Reducing background noise and false detections.
+- Improving gesture recognition accuracy.
+- Minimizing processing delay for real-time interaction.
+- Maintaining stable hand tracking under different camera angles.
+
+---
+
+## 📈 Results
+
+- ✅ Achieved **over 90% gesture recognition accuracy** during testing.
+- ✅ Successfully integrated real-time gesture recognition with the kiosk interface.
+- ✅ Improved accessibility through touch-free interaction.
+- ✅ Reduced the need for physical contact in public environments.
+- ✅ Delivered smooth and responsive real-time performance.
+
+---
+
+## 🚀 Future Enhancements
+
+- Dynamic gesture recognition
+- Voice-assisted interaction
+- Multi-language support
+- Face authentication
+- Cloud integration
+- IoT-enabled smart kiosk support
+
+---
+
+## 📸 Screenshots
+
+> Add screenshots of your project here.
+
+Example:
+
+```
+screenshots/
+├── home.png
+├── gesture_detection.png
+├── menu_navigation.png
+```
+
+---
+
+## 👨‍💻 Author
+
+**Hema Shankar**
+
+If you found this project helpful, consider giving it a ⭐ on GitHub.
